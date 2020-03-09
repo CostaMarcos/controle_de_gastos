@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'style.css'%}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="frame">
+    <h1 class="titulo">Controle de gastos</h>
+  </div>
+  <main style="position:absolute; top: 90px;">
+    <form method="POST" style="">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Salvar</button>
+        {% if transacao %}
+            <a href="{% url 'url_delete' transacao.id %}">Deletar</a>
+        {% endif %}
+    </form>
+      <a href="{%url 'url_listagem'%}"><button>Voltar</button></a>
+  </main>
+</body>
+</html>

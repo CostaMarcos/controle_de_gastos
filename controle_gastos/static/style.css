@@ -1,0 +1,71 @@
+*{
+  background-color: #D5D8DC;  
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+}
+
+.frame{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #2E86C1;
+}
+
+.titulo{
+  background-color: transparent;
+  margin: 15px 70px;
+  font-size: 28px;
+}
+
+.historico{
+  position: absolute;
+  top: 80px;
+  width: 100%;
+}
+
+.secao{
+  margin: 60px 70px;
+}
+
+table{
+  width: 50%;
+  border-collapse: collapse;
+  margin: auto;
+}
+
+td, th {
+  border: 1px solid #1F618D;
+  text-align: left;
+  padding: 8px;
+}
+
+.delete{
+  border: none;
+  background-color: #E74C3C;
+  border-radius: 8px;
+}
+
+.update{
+  border: none;
+  background-color: #7D3C98;
+  border-radius: 8px;
+}
+
+th{
+  background-color: #104D75;
+  color: #fff;
+  font-weight: 300;
+}
+
+.data{
+  width: 100px;
+}
+
+.valor{
+  width: 100px;  
+}
+
+.opc{
+  width: 170px;
+}

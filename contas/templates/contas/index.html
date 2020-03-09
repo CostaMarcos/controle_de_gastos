@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<link href="https://fonts.googleapis.com/css?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'style.css'%}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div class="frame">
+    <h1 class="titulo">Controle de gastos</h>
+  </div>
+  <main>
+    <div class="historico">
+      <div class="topo" style="display: inline-flex;align-items: center;">
+        <h2 class="secao">Histórico</h2>
+        <a href="{%url 'url_nova'%}">
+          <button style="height: 30px;background-color: #28B463;border: none;border-radius: 7px;color: #fff;">Adicionar</button></a>
+      </div>
+      <table>
+        <tr>
+          <th class="data">Data</th>
+          <th class="valor">Valor</th>
+          <th class="tipo">Tipo</th>
+          <th class="obs">Observação</th>
+          <th class="opc">Opção</th>
+        </tr>
+        {% for transacao in transacoes %}
+        <tr>
+          <td>{{transacao.data|date:"F"}}</td>
+          <td>R${{transacao.valor}}</td>
+          <td>{{transacao.categoria}}</td>
+          <td>{{ transacao.descricao }}</td>
+          <td>
+            <button class="delete"><a href="{% url 'url_delete' transacao.id %}" style="text-decoration: none;background-color: transparent;color: #fff;">Deletar</a></button>
+            <button class="update"><a href="{% url 'url_update' transacao.id%}" style="text-decoration: none;background-color: transparent;color: #fff;">Atualizar</a></button>
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </main>
+</body>
+</html>
